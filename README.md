@@ -72,3 +72,35 @@
 **Ejercicio 19**: Busca la palabra "**fatal**" en todos los archivos dentro del directorio **/var/log**.
 
 **Ejercicio 20**: Encuentra en el archivo **/etc/ssh/sshd_config** todas las líneas que no estén comentadas (que no comiencen con un #) y contengan la palabra "**Permit**".
+
+## Acceder a los sistemas remotos con SSH
+
+**Ejercicio 1**: En un servidor RHEL 9, verifica si el servicio SSH está instalado y en funcionamiento. Si no lo está, instálalo, actívalo, y asegúrate de que se inicie automáticamente al arrancar el sistema.
+
+**Ejercicio 2**: Configura el servidor SSH en un sistema RHEL 9 para que escuche en el **puerto 2222** en lugar del puerto predeterminado (22). Asegúrate de que este cambio no interrumpa las conexiones SSH actuales.
+
+**Ejercicio 3**: Configura el servidor SSH para permitir acceso remoto solo al usuario **adminuser**. Asegúrate de que todos los demás usuarios no puedan acceder a través de SSH.
+
+**Ejercicio 4**: Configura la autenticación basada en claves SSH entre dos sistemas RHEL 9, de manera que el usuario **john** en el sistema server1 (cliente) pueda acceder al sistema server2 (servidor) sin necesidad de ingresar una contraseña.
+
+**Ejercicio 5**: Configura el servidor SSH para deshabilitar la autenticación por contraseña, permitiendo solo la autenticación basada en claves públicas. Verifica que los usuarios aún puedan acceder si tienen las claves SSH configuradas correctamente.
+
+**Ejercicio 6**: Configura el servidor SSH para registrar (log) todas las sesiones SSH entrantes en un archivo de registro separado en **/var/log/ssh_access.log**. Asegúrate de que este archivo de registro sea accesible solo para el usuario **root**.
+
+**Ejercicio 7**: Configura un banner de advertencia que se muestre a todos los usuarios que se conecten al servidor a través de SSH. El contenido del banner debe ser "**Acceso Autorizado Solamente**".
+
+**Ejercicio 8**: Configura el servidor SSH para que cualquier usuario que se conecte a través de SSH sea forzado a utilizar un shell restringido (rbash).
+
+**Ejercicio 9**: Configura un túnel SSH en el cliente que permita el acceso al puerto 80 en servidor a través del puerto 8080 en cliente. Verifica que puedas acceder a http://localhost:8080 desde cliente.
+
+**Ejercicio 11**: Configura el servidor SSH para limitar el **número máximo de conexiones simultáneas a 5** y el **número máximo de conexiones por IP a 2**. Asegúrate de que estas configuraciones se apliquen correctamente.
+
+**Ejercicio 12**: Configura el servidor SSH para que un usuario específico, **chrootuser**, sea **restringido a un entorno chroot en /var/chroot** cuando se conecte al servidor mediante SSH. Asegúrate de que chrootuser no pueda acceder a directorios fuera de este entorno chroot.
+
+**Ejercicio 13**: Configura el servidor SSH para deshabilitar el acceso SSH al usuario root. Asegúrate de que otros usuarios aún puedan acceder al servidor utilizando SSH.
+
+**Ejercicio 14**: Configura el servidor SSH para que priorice el uso del cifrado **aes256-ctr** para las conexiones SSH. Asegúrate de que esta configuración se aplique correctamente.
+
+**Ejercicio 15**: Configura el servidor SSH para requerir autenticación de dos factores (**2FA**) usando **Google Authenticator** junto con la autenticación de claves públicas. Verifica que los usuarios puedan iniciar sesión solo si proporcionan ambos factores de autenticación.
+
+**Ejercicio 16**: Escribe un comando SSH en **client1** que ejecute un script llamado **backup.sh** ubicado en **server1** en el directorio **/usr/local/scripts/**, sin iniciar una sesión interactiva.
