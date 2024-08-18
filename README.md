@@ -134,3 +134,45 @@
 **Ejercicio 13**: Configura el sistema para auditar y registrar cada vez que un usuario cambia a otro usuario utilizando su o sudo. Verifica que los cambios de usuario se están registrando correctamente en los archivos de log.
 
 **Ejercicio 14**: Configura sudo para que el usuario john pueda ejecutar únicamente el comando **ls /root** sin necesidad de cambiar a root ni proporcionar una contraseña. Verifica que john puede ejecutar este comando, pero no otros comandos como rm /root/*.
+
+## Archivar, comprimir, desempaquetar y descomprimir archivos utilizando tar, gzip y bzip2
+
+**Ejercicio 1**: Crea un archivo tar llamado **backup.tar** que contenga todos los archivos y subdirectorios dentro del directorio **/etc**.
+
+**Ejercicio 2**: Comprime el archivo **backup.tar** utilizando **gzip**. El archivo comprimido debe llamarse **backup.tar.gz**.
+
+**Ejercicio 3**: Comprime el archivo **backup.tar** utilizando **bzip2**. El archivo comprimido debe llamarse **backup.tar.bz2**.
+
+**Ejercicio 4**: Extrae el contenido del archivo **backup.tar.gz** en un directorio llamado **/tmp/backup**.
+
+**Ejercicio 5**: Extrae el contenido del archivo **backup.tar.bz2** en un directorio llamado **/tmp/backup_bz2**.
+
+**Ejercicio 6**: Crea un archivo tar llamado **etc_backup.tar** que contenga todo el contenido del directorio /etc, pero **excluyendo los directorios sysconfig y selinux**.
+
+**Ejercicio 7**: Lista el contenido del archivo **backup.tar.gz** sin extraerlo.
+
+**Ejercicio 8**: Añade el archivo **/var/log/messages** al archivo **backup.tar**. Verifica que el archivo se ha añadido correctamente sin extraer el contenido del archivo tar.
+
+**Ejercicio 9**: Comprime todos los archivos .log en el directorio /var/log utilizando gzip, manteniendo los archivos originales comprimidos en el mismo directorio.
+
+**Ejercicio 10**: Comprime todos los archivos .txt en el directorio /home/user/docs utilizando bzip2, eliminando los archivos originales después de la compresión.
+
+**Ejercicio 11**: Descomprime el archivo messages.gz en el directorio /var/log, manteniendo el archivo comprimido original.
+
+**Ejercicio 12**: Descomprime el archivo report.txt.bz2 en el directorio /home/user/docs, eliminando el archivo comprimido después de la descompresión.
+
+**Ejercicio 13**: Crea un archivo tar comprimido llamado home_backup.tar.gz que contenga todo el contenido del directorio /home.
+
+**Ejercicio 14**: Extrae únicamente el archivo httpd.conf del archivo etc_backup.tar.gz en el directorio /tmp.
+
+**Ejercicio 15**: Crea un archivo tar incremental llamado backup_incremental.tar que contenga los cambios realizados en el directorio /etc desde la última copia de seguridad completa (backup.tar). Usa un archivo de snapshot llamado backup.snar.
+
+**Ejercicio 16**: Lista el contenido del archivo home_backup.tar.gz para verificar los archivos y directorios incluidos, sin extraer el archivo.
+
+**Ejercicio 17**: Comprime el archivo largefile.txt primero con gzip y luego con bzip2. Compara los tamaños resultantes de los archivos comprimidos (largefile.txt.gz y largefile.txt.bz2) y determina cuál es más eficiente en términos de compresión.
+
+**Ejercicio 18**: Utiliza tar para comprimir el contenido del directorio /var/log y envíalo a través de la red a otro servidor llamado backupserver, utilizando SSH. El archivo debe llamarse log_backup.tar.gz y guardarse en el directorio /backups del servidor de destino.
+
+**Ejercicio 19**: Extrae y descomprime simultáneamente el archivo logs_backup.tar.bz2 en el directorio /var/logs_backup.
+
+**Ejercicio 20**: Crea un archivo tar llamado small_files_backup.tar que contenga todos los archivos del directorio /home/user/docs que sean menores de 1 MB, excluyendo los archivos más grandes.
