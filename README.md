@@ -104,3 +104,33 @@
 **Ejercicio 15**: Configura el servidor SSH para requerir autenticación de dos factores (**2FA**) usando **Google Authenticator** junto con la autenticación de claves públicas. Verifica que los usuarios puedan iniciar sesión solo si proporcionan ambos factores de autenticación.
 
 **Ejercicio 16**: Escribe un comando SSH en **client1** que ejecute un script llamado **backup.sh** ubicado en **server1** en el directorio **/usr/local/scripts/**, sin iniciar una sesión interactiva.
+
+## Iniciar sesión y cambiar de usuario en destinos multiusuario
+
+**Ejercicio 1**: Inicia sesión en tu servidor y cambia al usuario admin sin salir de tu sesión actual. Asegúrate de que mantienes el entorno de usuario actual ($HOME y variables de entorno) del usuario original.
+
+**Ejercicio 2**: Cambia al usuario **developer** en el servidor, pero esta vez asegúrate de que el entorno del usuario original NO se mantenga, y que el entorno de developer se cargue completamente.
+
+**Ejercicio 3**: Sin cambiar de sesión ni iniciar una nueva sesión, ejecuta el comando **whoami** como el usuario **root** desde tu sesión actual. (`runuser`)
+
+**Ejercicio 4**: Desde la cuenta de usuario john, ejecuta un comando para listar el contenido del directorio **/root** utilizando su sin cambiar a la sesión de root.
+
+**Ejercicio 5**: Conéctate al servidor como usuario admin. Luego, desde otra terminal o consola, conéctate de nuevo al servidor como admin. Identifica cuántas sesiones están abiertas para el usuario admin y enuméralas.
+
+**Ejercicio 6**: Configura el sistema de manera que el usuario developer pueda cambiar al usuario john sin requerir la contraseña de john. Verifica que el cambio de usuario se puede realizar sin pedir la contraseña.
+
+**Ejercicio 7**: Desde una sesión SSH, conéctate a un entorno gráfico remoto utilizando X11 forwarding. Asegúrate de que puedes ejecutar aplicaciones gráficas remotamente desde tu terminal.
+
+**Ejercicio 8**: Configura el servidor para permitir que el usuario **developer** ejecute el comando **systemctl restart httpd** sin necesidad de proporcionar una contraseña. Verifica que developer puede ejecutar el comando usando sudo sin que se le pida la contraseña.
+
+**Ejercicio 9**: Inicia sesión en el servidor como usuario **root** y supervisa todas las sesiones activas en el sistema. Muestra el **nombre de usuario, terminal, hora de inicio de la sesión, y el nombre de la máquina remota** (si corresponde) para cada sesión.
+
+**Ejercicio 10**: Desde la cuenta de usuario **root**, identifica y termina la sesión de un usuario específico (**developer**) que esté conectado al servidor. Asegúrate de que la sesión ha sido cerrada correctamente.
+
+**Ejercicio 11**: Configura el servidor para que el usuario admin pueda iniciar sesión remotamente en el servidor sin requerir una contraseña, utilizando claves SSH.
+
+**Ejercicio 12**: Configura sudo para que el usuario john pueda cambiar al usuario developer usando sudo su - developer sin necesidad de proporcionar una contraseña.
+
+**Ejercicio 13**: Configura el sistema para auditar y registrar cada vez que un usuario cambia a otro usuario utilizando su o sudo. Verifica que los cambios de usuario se están registrando correctamente en los archivos de log.
+
+**Ejercicio 14**: Configura sudo para que el usuario john pueda ejecutar únicamente el comando **ls /root** sin necesidad de cambiar a root ni proporcionar una contraseña. Verifica que john puede ejecutar este comando, pero no otros comandos como rm /root/*.
