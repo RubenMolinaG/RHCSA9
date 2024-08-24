@@ -54,3 +54,27 @@ ps -eZ | grep proc-name	# Muestra el contexto de SELinux de un proceso.
 ---
 
 `cat /var/log/audit/audit.log | grep AVC` &rarr; Filtra los registros de SELinux en el log de auditoría para encontrar mensajes de Control de Acceso Voluntario (AVC).
+
+`sealert -a /var/log/audit/audit.log` &rarr; Utiliza *sealert* para analizar los logs de SELinux y generar un reporte detallado de posibles problemas y soluciones.
+
+---
+
+```bash
+# Asegura que el servidor Apache pueda acceder a sus archivos y conectar a bases de datos remotas.
+chcon -R -t httpd_sys_content_t /var/www/html/
+setsebool -P httpd_can_network_connect_db on
+```
+
+```bash
+# Permite a los usuarios autenticados subir archivos a un directorio específico.
+chcon -R -t public_content_rw_t /var/ftp/uploads/
+setsebool -P ftp_home_dir on
+```
+
+---
+
+`touch /.autorelabel` &rarr; Fuerza a SELinux a reetiquetar todos los archivos del sistema durante el próximo arranque. Útil cuando los contextos del archivo se han corrompido.
+
+`sealert -b`
+
+`audit2allow -a`
