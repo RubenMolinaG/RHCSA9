@@ -76,3 +76,21 @@ setsebool -P ftp_home_dir on
 ---
 
 `touch /.autorelabel` &rarr; Fuerza a SELinux a reetiquetar todos los archivos del sistema durante el próximo arranque. Útil cuando los contextos del archivo se han corrompido.
+
+---
+
+## Ejercicios
+
+**Ejercicio 1**: Instala el servidor web Apache en tu sistema RHEL9.
+
+**Ejercicio 2**: Verifica el contexto SELinux de los archivos del directorio raíz de Apache.
+
+**Ejercicio 3**: Cambia la configuración de Apache para que escuche por el puerto 82.
+
+**Ejercicio 4**: Cambia el directorio raíz de Apache, de */var/www/html* a */srv/myweb*
+
+**Ejercicio 5**: Configura SELinux para permitir que Apache realice conexiones de red salientes, como cuando se conecta a una base de datos remota (*httpd_can_network_connect*).
+
+**Ejercicio 6**: Accede a una página web servida por Apache y verifica si SELinux está bloqueando alguna acción. Si encuentras bloqueos, utiliza `audit2allow` para sugerir soluciones.
+
+**Ejercicio 7**: Verifica los booleanos de SELinux relacionados con Apache.
